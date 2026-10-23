@@ -1,0 +1,11 @@
+{
+  "name": "hireready-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HireReady AI - Full-stack HR Interview Preparation Platform",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "frontend": "npm --prefix frontend run dev"
+  }
+}
