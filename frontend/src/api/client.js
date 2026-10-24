@@ -71,6 +71,9 @@ class ApiClient {
 
       return data;
     } catch (error) {
+      if (error instanceof TypeError && (error.message?.includes('fetch') || error.message?.includes('NetworkError'))) {
+        throw new Error(`Unable to reach backend server (${BASE_URL}). Please ensure Django server is running.`);
+      }
       throw error;
     }
   }

@@ -141,6 +141,11 @@ cors_origins_env = os.environ.get(
 )
 CORS_ALLOWED_ORIGINS = [origin.strip() for origin in cors_origins_env.split(',') if origin.strip()]
 CORS_ALLOW_CREDENTIALS = True
+if DEBUG:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^http://localhost:\d+$",
+        r"^http://127\.0\.0\.1:\d+$",
+    ]
 
 # Google Gemini AI settings
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '').strip()
